@@ -1,16 +1,15 @@
-@import "normalase.css";
-
-$breakpoint-mobile: 650px;
-$coloir: red;
-
 :root {
---color-background_color: #FFFFFF;
---color-title_color: #363636;
---color-base_text_color: #363636;
+  --color-background_color: #FFFFFF;
+  --color-title_color: #363636;
+  --color-content_text_color: #363636;
+  --color-base_text_color: #363636;
+  --color-main_btn: #00AFA9;
+  --color-main_btn_text: #fff;
 
---grid-desktop-horizontal-spacing: 66px;
+  --color-image_wrapper: #FFF9C0;
+  --color-tag_item_inner : #E4D9A2;
 
---max-width: 1258px;
+  --max-width: 1258px;
 }
 *, a { 
   font-family: "F37GingerLight";
@@ -55,17 +54,20 @@ $coloir: red;
 .section_title {
   font-family: "F37GingerBolt";
   font-size: 2.5em;
-  color: #363636;
+  color: var(--color-title_color);
   max-width: 612px;
   line-height: 52px;
   letter-spacing: normal;
 }
 
 .content_text {
-  color: var(--color-base_text_color);
   max-width: 736px;
   padding-top: 30px;
   letter-spacing: normal;
+
+  .content_text_inner {
+    color: var(--color-content_text_color);
+  }
 }
 
 .slideshow-gallery {
@@ -111,18 +113,16 @@ $coloir: red;
 }
 
 .splide__pagination__page-custom {
-  background: #fff;
+  background: transparent;
   height: 12px;
   width: 12px;
-  border: 1px solid #363636;
+  border: 1px solid var(--color-base_text_color);
   &.is-active{
     transform: none;
-    border: #00AFA9;
-    background: #00AFA9; 
+    border: var(--color-main_btn);
+    background: var(--color-main_btn); 
   }
 }
-
-
 
 .product-item {
   display: flex;
@@ -131,12 +131,11 @@ $coloir: red;
 
   &:hover {
     .image_wrapper{
-      border-radius: 20px;
-      background: #FFF9C0;
+      background: var(--color-image_wrapper);
     }
     .tag_item_inner {
       border-radius: 4px;
-      border: 1px solid #E4D9A2;
+      border: 1px solid var(--color-tag_item_inner);
     }
     .price_per_day{
       display: block;
@@ -149,9 +148,11 @@ $coloir: red;
   width: 310px;
   height: 310px;
   margin: 0 auto;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all .3s linear;
 }
 
 .image_wrapper_inner {
@@ -159,7 +160,7 @@ $coloir: red;
   bottom: 30px;
 }
 
-.price_per_day{
+.price_per_day {
   display: none;
   position: absolute;
   text-align: right;
@@ -204,7 +205,6 @@ $coloir: red;
     }
   }
 
-
   .tag_text{
     padding-left: 10px;
     line-height: normal;
@@ -237,14 +237,9 @@ $coloir: red;
     height: 56px;
     flex-shrink: 0;
 
-    color: #fff;
+    color: var(--color-main_btn_text);
     border-radius: 10px;
-    background: #00AFA9; 
+    background: var(--color-main_btn); 
     color: color: #FFF;
   }
 }
-
-
-
-
-

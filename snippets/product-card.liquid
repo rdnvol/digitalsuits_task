@@ -1,6 +1,6 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 
-<div class="product-item">
+<div id="shopify-{{ blockId }}" class="product-item">
   <div class="image_wrapper discount--active">
     <div class="price_per_day ">
       {% if product.metafields.custom.frequency_price != blank and product.metafields.custom.frequency != blank %}

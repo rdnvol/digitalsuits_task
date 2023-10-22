@@ -2,20 +2,23 @@
 {{ 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css' | stylesheet_tag }}
 {{ 'splide_slider.js' | asset_url | script_tag }}
 {{ 'fonts.css' | asset_url | stylesheet_tag }}
+{{ 'normalase.css' | asset_url | stylesheet_tag }}
 {{ 'main.scss' | asset_url | stylesheet_tag }}
 
-<section class="section section_padding_1" id="{{ section.id }}">
+<section id="shopify-{{ section.id }}" class="section section_padding_1" id="{{ section.id }}">
   <div class="container">
-    <div class="section_content">
-      {% if section.settings.title != blank %}
-        <h1 class="section_title">{{ section.settings.title }}</h1>
-      {% endif %}
-      {% if section.settings.section_content != blank %}
-        <div class="content_text">
-          <p>{{ section.settings.section_content }}</p>
-        </div>
-      {% endif %}
-    </div>
+    {% if section.settings.title != blank or section.settings.section_content != blank %}
+      <div class="section_content">
+        {% if section.settings.title != blank %}
+          <h1 class="section_title">{{ section.settings.title }}</h1>
+        {% endif %}
+        {% if section.settings.section_content != blank %}
+          <div class="content_text">
+            <p class="content_text_inner">{{ section.settings.section_content }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
     {% if section.blocks.size >= 1 %}
       <div class="splide slideshow-gallery">
         <div class="splide__track">
@@ -23,7 +26,7 @@
             {% for block in section.blocks %}
               {% if block.settings.product_picker != blank %}
                 <div class="splide__slide slide" {{ block.shopify_attributes }}>
-                  {% render 'product-card', product: block.settings.product_picker %}
+                  {% render 'product-card', product: block.settings.product_picker, blockId: block.id %}
                 </div>
               {% endif %}
             {% endfor %}
@@ -40,6 +43,40 @@
 </section>
 
 <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+{% style %}
+  {% if section.settings.title_color != blank and section.settings.title_color.alpha != 0 %}
+    #shopify-{{ section.id }} .section_title {
+      --color-title_color: {{ section.settings.title_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.content_color != blank and section.settings.content_color.alpha != 0 %}
+    #shopify-{{ section.id }} .content_text {
+      --color-content_text_color: {{ section.settings.content_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.btn_text_color != blank and section.settings.btn_text_color.alpha != 0 %}
+    #shopify-{{ section.id }} .section_main_btn_inner {
+      --color-main_btn_text: {{ section.settings.btn_text_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.btn_color != blank and section.settings.btn_color.alpha != 0 %}
+    #shopify-{{ section.id }} .section_main_btn_inner, .splide__pagination__page-custom.is-active {
+      --color-main_btn: {{ section.settings.btn_color }};
+    }
+  {% endif %}
+
+  {% for block in section.blocks %}
+    {% if block.settings.product_bg_color != blank and block.settings.product_bg_color.alpha != 0 %}
+      #shopify-{{ block.id }} .image_wrapper {
+        --color-image_wrapper: {{ block.settings.product_bg_color }};
+      }
+    {% endif %}
+  {% endfor %}
+{% endstyle %}
 
 {% schema %}
 {
@@ -92,11 +129,6 @@
       "id": "btn_color",
       "label": "Button color",
       "default": "#fff"
-    },
-    {
-      "type": "color",
-      "id": "discount_bg_color",
-      "label": "Discount background color"
     }
   ],
   "blocks": [
@@ -108,6 +140,11 @@
           "type": "product",
           "id": "product_picker",
           "label": "Pick a product"
+        },
+        {
+          "type": "color",
+          "id": "product_bg_color",
+          "label": "Product backgroung after element hover"
         }
       ]
     }
