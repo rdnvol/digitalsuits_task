@@ -1,0 +1,250 @@
+@import "normalase.css";
+
+$breakpoint-mobile: 650px;
+$coloir: red;
+
+:root {
+--color-background_color: #FFFFFF;
+--color-title_color: #363636;
+--color-base_text_color: #363636;
+
+--grid-desktop-horizontal-spacing: 66px;
+
+--max-width: 1258px;
+}
+*, a { 
+  font-family: "F37GingerLight";
+  font-size: 1em;
+  font-weight: 400;
+  box-sizing: border-box;
+  background: var(--color-background_color);
+  text-decoration: none;
+  color: var(--color-base_text_color);
+  background: transparent;
+}
+
+
+.section_padding_1 {
+  padding: 71px 0px;
+
+}
+
+.container {
+  line-height: 25.28px;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+
+  @media (max-width: 1257px) {
+    padding: 0px 20px;
+  }
+
+  @media (max-width: 650) {
+    max-width: 335px;
+  }
+}
+
+.section_content {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.section_title {
+  font-family: "F37GingerBolt";
+  font-size: 2.5em;
+  color: #363636;
+  max-width: 612px;
+  line-height: 52px;
+  letter-spacing: normal;
+}
+
+.content_text {
+  color: var(--color-base_text_color);
+  max-width: 736px;
+  padding-top: 30px;
+  letter-spacing: normal;
+}
+
+.slideshow-gallery {
+  padding-top: 80px;
+  display: block;
+
+  @media (max-width: 650px) {
+    padding-top: 0px;
+  }
+}
+
+@media (min-width: 650px) {
+  .splide.is-initialized:not(.is-active) .splide__list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .slide {
+    width: 100%;
+    max-width: 310px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.splide__arrow {
+  display: none;
+}
+
+.splide__pagination {
+  display: none;
+}
+
+.splide__pagination-custom {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  z-index: 1;
+  bottom: -35px;
+
+}
+
+.splide__pagination__page-custom {
+  background: #fff;
+  height: 12px;
+  width: 12px;
+  border: 1px solid #363636;
+  &.is-active{
+    transform: none;
+    border: #00AFA9;
+    background: #00AFA9; 
+  }
+}
+
+
+
+.product-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &:hover {
+    .image_wrapper{
+      border-radius: 20px;
+      background: #FFF9C0;
+    }
+    .tag_item_inner {
+      border-radius: 4px;
+      border: 1px solid #E4D9A2;
+    }
+    .price_per_day{
+      display: block;
+    }
+  }
+}
+
+.image_wrapper {
+  position: relative;
+  width: 310px;
+  height: 310px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_wrapper_inner {
+  position: absolute;
+  bottom: 30px;
+}
+
+.price_per_day{
+  display: none;
+  position: absolute;
+  text-align: right;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  .price_per_day-price{
+    font-size: 28px;
+    line-height: 36.96px;
+  }
+
+  .price_per_day-day{
+    font-size: 18px;
+  }
+}
+.tags_list {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 15px;
+}
+
+.tag_item {
+  padding-right: 15px;
+
+  &:last-child {
+    padding-right: 0px;
+  }
+
+  .tag_item_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #D7D2CC;
+
+    .tag_icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+  .tag_text{
+    padding-left: 10px;
+    line-height: normal;
+  }
+}
+
+.product-item_title {
+  font-family: "F37GingerBolt";
+  font-size: 1.125em;
+  line-height: 23.76px;
+  padding-top: 10px;
+}
+
+.product-item_price{
+  padding-top: 10px;
+  line-height: 21.12px;
+}
+
+.section_main_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+
+  .section_main_btn_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    height: 56px;
+    flex-shrink: 0;
+
+    color: #fff;
+    border-radius: 10px;
+    background: #00AFA9; 
+    color: color: #FFF;
+  }
+}
+
+
+
+
+

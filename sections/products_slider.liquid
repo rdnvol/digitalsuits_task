@@ -1,0 +1,136 @@
+{% assign variable = false %}
+{{ 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css' | stylesheet_tag }}
+{{ 'splide_slider.js' | asset_url | script_tag }}
+{{ 'fonts.css' | asset_url | stylesheet_tag }}
+{{ 'main.scss' | asset_url | stylesheet_tag }}
+
+<section class="section section_padding_1" id="{{ section.id }}">
+  <div class="container">
+    <div class="section_content">
+      {% if section.settings.title != blank %}
+        <h1 class="section_title">{{ section.settings.title }}</h1>
+      {% endif %}
+      {% if section.settings.section_content != blank %}
+        <div class="content_text">
+          <p>{{ section.settings.section_content }}</p>
+        </div>
+      {% endif %}
+    </div>
+    {% if section.blocks.size >= 1 %}
+      <div class="splide slideshow-gallery">
+        <div class="splide__track">
+          <div class="splide__list">
+            {% for block in section.blocks %}
+              {% if block.settings.product_picker != blank %}
+                <div class="splide__slide slide" {{ block.shopify_attributes }}>
+                  {% render 'product-card', product: block.settings.product_picker %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if section.settings.btn_url != blank and section.settings.btn_text != blank %}
+      <div class="section_main_btn">
+        <a class="section_main_btn_inner" href="{{ section.settings.btn_url }}"> {{ section.settings.btn_text }} </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+{% schema %}
+{
+  "name": "Products slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Have you had your daily dose of vit today?"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "section_content",
+      "label": "Content text",
+      "default": "Whether you need a daily pick-me up or a little sleep support, our products are developed with the end goal in mind. Optimally-dosed, highly bioavailable formulas means you can see and feel results that set you on a path to better health."
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content color",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text",
+      "default": "See all products"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL",
+      "default": "/collections"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button text color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "discount_bg_color",
+      "label": "Discount background color"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product picker",
+      "type": "product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_picker",
+          "label": "Pick a product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products slider",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
