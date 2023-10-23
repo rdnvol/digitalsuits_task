@@ -1,11 +1,11 @@
 {% assign variable = false %}
 {{ 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css' | stylesheet_tag }}
-{{ 'splide_slider.js' | asset_url | script_tag }}
+{{ 'splide_products_slider.js' | asset_url | script_tag }}
 {{ 'fonts.css' | asset_url | stylesheet_tag }}
 {{ 'normalase.css' | asset_url | stylesheet_tag }}
-{{ 'main.scss' | asset_url | stylesheet_tag }}
+{{ 'products_slider.scss' | asset_url | stylesheet_tag }}
 
-<section id="shopify-{{ section.id }}" class="section section_padding_1" id="{{ section.id }}">
+<section id="shopify-{{ section.id }}" class="section section_padding_1 products-slider">
   <div class="container">
     {% if section.settings.title != blank or section.settings.section_content != blank %}
       <div class="section_content">
@@ -25,7 +25,7 @@
           <div class="splide__list">
             {% for block in section.blocks %}
               {% if block.settings.product_picker != blank %}
-                <div class="splide__slide slide" {{ block.shopify_attributes }}>
+                <div {{ block.shopify_attributes }} class="splide__slide slide">
                   {% render 'product-card', product: block.settings.product_picker, blockId: block.id %}
                 </div>
               {% endif %}
@@ -92,7 +92,7 @@
       "type": "color",
       "id": "title_color",
       "label": "Title color",
-      "default": "#fff"
+      "default": "#784444"
     },
     {
       "type": "text",
@@ -104,7 +104,7 @@
       "type": "color",
       "id": "content_color",
       "label": "Content color",
-      "default": "#fff"
+      "default": "#784444"
     },
     {
       "type": "text",
@@ -122,13 +122,13 @@
       "type": "color",
       "id": "btn_text_color",
       "label": "Button text color",
-      "default": "#000"
+      "default": "#fff"
     },
     {
       "type": "color",
       "id": "btn_color",
       "label": "Button color",
-      "default": "#fff"
+      "default": "#00AFA9"
     }
   ],
   "blocks": [
@@ -144,7 +144,8 @@
         {
           "type": "color",
           "id": "product_bg_color",
-          "label": "Product backgroung after element hover"
+          "label": "Product backgroung after element hover",
+          "default": "#FFF9C0"
         }
       ]
     }

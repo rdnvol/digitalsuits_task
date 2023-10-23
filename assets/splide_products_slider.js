@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var splide = new Splide('.splide', {
+  var splide = new Splide('.products-slider .splide', {
     mediaQuery: 'min',
     breakpoints: {
       650: {
