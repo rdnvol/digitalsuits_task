@@ -1,0 +1,130 @@
+{% assign variable = false %}
+
+{{ 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css' | stylesheet_tag }}
+{{ 'splide_reviews_slider.js' | asset_url | script_tag }}
+
+{{ 'fonts.css' | asset_url | stylesheet_tag }}
+{{ 'normalase.css' | asset_url | stylesheet_tag }}
+{{ 'reviews_slider.scss' | asset_url | stylesheet_tag }}
+
+<section id="shopify-{{ section.id }}" class="section section_padding_1 reviews-slider">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <h1 class="review_section_title">{{ section.settings.title }}</h1>
+    {% endif %}
+    {% if section.blocks.size >= 1 %}
+      <div class="splide slideshow-gallery">
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev splide__arrow--prev-custom">
+            {% render 'arrow--prev' %}
+          </button>
+          <button class="splide__arrow splide__arrow--next splide__arrow--next-custom">
+            {% render 'arrow--next' %}
+          </button>
+        </div>
+        <div class="splide__track">
+          <div class="splide__list">
+            {% for block in section.blocks %}
+              <div {{ block.shopify_attributes }} class="splide__slide slide">
+                {% render 'review-card',
+                  product: block.settings.product_picker,
+                  block: block,
+                  num_of_stars: block.settings.num_of_stars
+                %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+{% style %}
+  {% if section.settings.title_color != blank and section.settings.title_color.alpha != 0 %}
+    #shopify-{{ section.id }} .review_section_title {
+      --color-title_color: {{ section.settings.title_color }};
+    }
+  {% endif %}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Reviews slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why People Love Us"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#784444"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Review",
+      "type": "review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "review_avatar",
+          "label": "Reviewer avatar"
+        },
+        {
+          "type": "number",
+          "id": "num_of_stars",
+          "label": "Pick nubler of stars",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "review_title",
+          "label": "Enter the review title",
+          "default": "Walking on Sunshine"
+        },
+        {
+          "type": "text",
+          "id": "review_content",
+          "label": "Enter the review content",
+          "default": "“These little softgels have helped boost my mood and keep me in a positive head space during all the chaos of everyone coming back to work since covid. I suffer from anxiety and depression and this has helped”"
+        },
+        {
+          "type": "text",
+          "id": "review_author",
+          "label": "Enter the review author",
+          "default": "Amber"
+        },
+        {
+          "type": "product",
+          "id": "product_for_review",
+          "label": "Select the product for review"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews slider",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

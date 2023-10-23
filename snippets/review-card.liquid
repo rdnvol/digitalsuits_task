@@ -1,0 +1,65 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<div id="shopify-{{ block.id }}" class="review-item">
+  <div class="review_item_container">
+    <div class="avatar_img_wrapper">
+      <div class="avatar_img_wrapper_inner">
+        {% if block.settings.review_avatar != blank %}
+          <img
+            class="avatar_img"
+            src="{{ block.settings.review_avatar | image_url }}"
+            alt="{{ block.settings.review_avatar.alt }}"
+            width="140"
+            height="140"
+            loading="lazy"
+          >
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="review_wrapper">
+      <div class="review_grade_wrapper">
+        {% render 'grate', num_of_stars: num_of_stars %}
+      </div>
+      {% if block.settings.review_title != blank %}
+        <h3 class="review_title">
+          {{ block.settings.review_title }}
+        </h3>
+      {% endif %}
+      {% if block.settings.review_content != blank %}
+        <p class="review_content">
+          {{ block.settings.review_content }}
+        </p>
+      {% endif %}
+    </div>
+    {% if block.settings.review_author != blank %}
+      <h4 class="review_author">
+        {{ block.settings.review_author }}
+      </h4>
+    {% endif %}
+  </div>
+  {% if block.settings.product_for_review != blank %}
+    <a class="review_product" href="{{ block.settings.product_for_review.url }}">
+      <div class="review_product_wrapper">
+        <img
+          src="{{ block.settings.product_for_review.featured_image | image_url }}"
+          alt="{{ block.settings.product_for_review.featured_image.alt }}"
+          width="92"
+          height="70"
+          loading="lazy"
+        >
+        <h4 class="review_product_title">{{ block.settings.product_for_review.title }}</h4>
+      </div>
+      <img
+        class="product_arrow"
+        src="{{ "Line 1.svg" | asset_url }}"
+        alt=""
+        width="22"
+        height="100"
+        loading="lazy"
+      >
+    </a>
+  {% endif %}
+</div>

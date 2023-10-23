@@ -24,10 +24,10 @@
             "product_bg_color": "#fff9c0"
           }
         },
-        "071258d1-243f-4329-aa76-ad7be1181231": {
+        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-4": {
           "type": "product",
           "settings": {
-            "product_picker": "",
+            "product_picker": "copy-of-immunity-1",
             "product_bg_color": "#fff9c0"
           }
         }
@@ -36,17 +36,64 @@
         "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-1",
         "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-2",
         "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-3",
-        "071258d1-243f-4329-aa76-ad7be1181231"
+        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-4"
       ],
       "settings": {
         "title": "Have you had your daily dose of vit today?",
-        "title_color": "#e95050",
+        "title_color": "#e06c6c",
         "section_content": "Whether you need a daily pick-me up or a little sleep support, our products are developed with the end goal in mind. Optimally-dosed, highly bioavailable formulas means you can see and feel results that set you on a path to better health.",
-        "content_color": "#d23737",
+        "content_color": "#a85b5b",
         "btn_text": "See all products",
         "btn_url": "shopify:\/\/collections",
-        "btn_text_color": "#fff",
-        "btn_color": "#e95050"
+        "btn_text_color": "#ffffff",
+        "btn_color": "#e06c6c"
+      }
+    },
+    "b5606499-e28f-4487-a766-4d1d2a2a8a4d": {
+      "type": "reviews_slider",
+      "blocks": {
+        "template--15849023537252__b5606499-e28f-4487-a766-4d1d2a2a8a4d-review-1": {
+          "type": "review",
+          "settings": {
+            "review_avatar": "shopify:\/\/shop_images\/e1e40a4d31fa7b9f15f32f525faca4f0.jpg",
+            "num_of_stars": 5,
+            "review_title": "Walking on Sunshine",
+            "review_content": "“These little softgels have helped boost my mood and keep me in a positive head space during all the chaos of everyone coming back to work since covid. I suffer from anxiety and depression and this has helped”",
+            "review_author": "Amber",
+            "product_for_review": "immunity"
+          }
+        },
+        "template--15849023537252__b5606499-e28f-4487-a766-4d1d2a2a8a4d-review-2": {
+          "type": "review",
+          "settings": {
+            "review_avatar": "shopify:\/\/shop_images\/03341cec7a88a4da3642fbec86a1e741.png",
+            "num_of_stars": 5,
+            "review_title": "Complete one Eighty in the Mood Department",
+            "review_content": "“I’ve been one to get frustrated easily while dealing with stressful situations, either while working or with people. But I got annoyed with feeling this way, so I decided to look online and see what  I could find. Came across these and ...”",
+            "review_author": "Aicia",
+            "product_for_review": "copy-of-immunity"
+          }
+        },
+        "template--15849023537252__b5606499-e28f-4487-a766-4d1d2a2a8a4d-review-3": {
+          "type": "review",
+          "settings": {
+            "review_avatar": "shopify:\/\/shop_images\/beccfab4b80775ae070b75a6feadb093.jpg",
+            "num_of_stars": 5,
+            "review_title": "Love this!!!",
+            "review_content": "“I love this vitamin, it is so tiny but packs a major punch! This has helped massively with my anxiety and has helped boost me up a little too!”",
+            "review_author": "Amber",
+            "product_for_review": "copy-of-cloud-nine"
+          }
+        }
+      },
+      "block_order": [
+        "template--15849023537252__b5606499-e28f-4487-a766-4d1d2a2a8a4d-review-1",
+        "template--15849023537252__b5606499-e28f-4487-a766-4d1d2a2a8a4d-review-2",
+        "template--15849023537252__b5606499-e28f-4487-a766-4d1d2a2a8a4d-review-3"
+      ],
+      "settings": {
+        "title": "Why People Love Us",
+        "title_color": "#784444"
       }
     },
     "image_banner": {
@@ -263,6 +310,7 @@
   },
   "order": [
     "6bb745e3-6ed2-4128-87e6-857a8374ca4d",
+    "b5606499-e28f-4487-a766-4d1d2a2a8a4d",
     "image_banner",
     "rich_text",
     "featured_collection",
