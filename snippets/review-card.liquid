@@ -1,12 +1,10 @@
-{% assign current_variant = product.selected_or_first_available_variant %}
-
 <div id="shopify-{{ block.id }}" class="review-item">
-  <div class="review_item_container">
-    <div class="avatar_img_wrapper">
-      <div class="avatar_img_wrapper_inner">
+  <div class="review-item__container">
+    <div class="avatar__wrapper">
+      <div class="avatar__wrapper__inner">
         {% if block.settings.review_avatar != blank %}
           <img
-            class="avatar_img"
+            class="avatar__img"
             src="{{ block.settings.review_avatar | image_url }}"
             alt="{{ block.settings.review_avatar.alt }}"
             width="140"
@@ -19,30 +17,30 @@
       </div>
     </div>
 
-    <div class="review_wrapper">
-      <div class="review_grade_wrapper">
+    <div class="review__wrapper">
+      <div class="review__grade__wrapper">
         {% render 'grate', num_of_stars: num_of_stars %}
       </div>
       {% if block.settings.review_title != blank %}
-        <h3 class="review_title">
+        <h3 class="review__title--coment">
           {{ block.settings.review_title }}
         </h3>
       {% endif %}
       {% if block.settings.review_content != blank %}
-        <p class="review_content">
+        <p class="review__content">
           {{ block.settings.review_content }}
         </p>
       {% endif %}
     </div>
     {% if block.settings.review_author != blank %}
-      <h4 class="review_author">
+      <h4 class="review__author">
         {{ block.settings.review_author }}
       </h4>
     {% endif %}
   </div>
   {% if block.settings.product_for_review != blank %}
-    <a class="review_product" href="{{ block.settings.product_for_review.url }}">
-      <div class="review_product_wrapper">
+    <a class="review__product" href="{{ block.settings.product_for_review.url }}">
+      <div class="review__product__wrapper">
         <img
           src="{{ block.settings.product_for_review.featured_image | image_url }}"
           alt="{{ block.settings.product_for_review.featured_image.alt }}"
@@ -50,10 +48,10 @@
           height="70"
           loading="lazy"
         >
-        <h4 class="review_product_title">{{ block.settings.product_for_review.title }}</h4>
+        <h4 class="review_product__title">{{ block.settings.product_for_review.title }}</h4>
       </div>
       <img
-        class="product_arrow"
+        class="product__arrow"
         src="{{ "Line 1.svg" | asset_url }}"
         alt=""
         width="22"

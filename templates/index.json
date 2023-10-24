@@ -57,7 +57,7 @@
           "settings": {
             "review_avatar": "shopify:\/\/shop_images\/e1e40a4d31fa7b9f15f32f525faca4f0.jpg",
             "num_of_stars": 5,
-            "review_title": "Walking on Sunshine",
+            "review__title": "Walking on Sunshine",
             "review_content": "“These little softgels have helped boost my mood and keep me in a positive head space during all the chaos of everyone coming back to work since covid. I suffer from anxiety and depression and this has helped”",
             "review_author": "Amber",
             "product_for_review": "immunity"
@@ -68,7 +68,7 @@
           "settings": {
             "review_avatar": "shopify:\/\/shop_images\/03341cec7a88a4da3642fbec86a1e741.png",
             "num_of_stars": 5,
-            "review_title": "Complete one Eighty in the Mood Department",
+            "review__title": "Complete one Eighty in the Mood Department",
             "review_content": "“I’ve been one to get frustrated easily while dealing with stressful situations, either while working or with people. But I got annoyed with feeling this way, so I decided to look online and see what  I could find. Came across these and ...”",
             "review_author": "Aicia",
             "product_for_review": "copy-of-immunity"
@@ -79,7 +79,7 @@
           "settings": {
             "review_avatar": "shopify:\/\/shop_images\/beccfab4b80775ae070b75a6feadb093.jpg",
             "num_of_stars": 5,
-            "review_title": "Love this!!!",
+            "review__title": "Love this!!!",
             "review_content": "“I love this vitamin, it is so tiny but packs a major punch! This has helped massively with my anxiety and has helped boost me up a little too!”",
             "review_author": "Amber",
             "product_for_review": "copy-of-cloud-nine"

@@ -1,5 +1,3 @@
-{% assign variable = false %}
-
 {{ 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css' | stylesheet_tag }}
 {{ 'splide_reviews_slider.js' | asset_url | script_tag }}
 
@@ -7,18 +5,18 @@
 {{ 'normalase.css' | asset_url | stylesheet_tag }}
 {{ 'reviews_slider.scss' | asset_url | stylesheet_tag }}
 
-<section id="shopify-{{ section.id }}" class="section section_padding_1 reviews-slider">
+<section id="shopify-{{ section.id }}" class="section section-padding--large reviews-slider">
   <div class="container">
     {% if section.settings.title != blank %}
-      <h1 class="review_section_title">{{ section.settings.title }}</h1>
+      <h1 class="review__title">{{ section.settings.title }}</h1>
     {% endif %}
     {% if section.blocks.size >= 1 %}
       <div class="splide slideshow-gallery">
         <div class="splide__arrows">
-          <button class="splide__arrow splide__arrow--prev splide__arrow--prev-custom">
+          <button class="splide__arrow splide__arrow--prev splide__arrow--prev--custom">
             {% render 'arrow--prev' %}
           </button>
-          <button class="splide__arrow splide__arrow--next splide__arrow--next-custom">
+          <button class="splide__arrow splide__arrow--next splide__arrow--next--custom">
             {% render 'arrow--next' %}
           </button>
         </div>
@@ -44,7 +42,7 @@
 
 {% style %}
   {% if section.settings.title_color != blank and section.settings.title_color.alpha != 0 %}
-    #shopify-{{ section.id }} .review_section_title {
+    #shopify-{{ section.id }} .review__title {
       --color-title_color: {{ section.settings.title_color }};
     }
   {% endif %}
@@ -80,7 +78,7 @@
         {
           "type": "number",
           "id": "num_of_stars",
-          "label": "Pick nubler of stars",
+          "label": "Pick number of stars",
           "default": 5
         },
         {

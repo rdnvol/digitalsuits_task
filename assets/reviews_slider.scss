@@ -11,12 +11,11 @@
 
   --max-width: 1258px;
 }
-*, a { 
+* { 
   font-family: "F37GingerLight";
   font-size: 1em;
   font-weight: 400;
   box-sizing: border-box;
-
   text-decoration: none;
   color: var(--color-base_text_color);
   background: transparent;
@@ -46,19 +45,21 @@
 }
 
 .reviews-slider {
-  .review_section_title {
+  .review__title {
     font-family: "F37GingerBolt";
     color: var(--color-title_color);
     font-size: 34px;
     line-height: 42.16px;
     background: transparent;
     margin-bottom: 60px;
+
     @media (max-width: 649px) {
       font-size: 30px;
       line-height: 37.2px;
       margin-bottom: 10px;
     }
   }
+
   @media (max-width: 649px) {
     .slide {
       height: 594px;
@@ -69,20 +70,18 @@
     }
   }
 
-  .review_item_container {
+  .review-item__container {
     padding: 0px 20px;
   }
 
-
-  .review_wrapper {
+  .review__wrapper {
     height: 340px;
   }
 
-  .review_grade_wrapper{
+  .review__grade__wrapper{
     width: 100%;
     padding-bottom: 25px;
   }
-
 
   .review-item {
     position: relative;
@@ -93,6 +92,7 @@
     height: 600px;
     border-radius: 15px;
     background: #DFFFFD;
+
     @media (max-width: 649px) {
       height: 544px;
       padding-bottom: 120px;
@@ -100,7 +100,7 @@
   }
   
 
-  .avatar_img_wrapper {
+  .avatar__wrapper {
     width: 100%;
     position: absolute;
     top: -70px;
@@ -111,7 +111,7 @@
       top: -50px;
     }
 
-    .avatar_img_wrapper_inner {
+    .avatar__wrapper__inner {
       position: relative;
       width: 140px;
       height: 140px;
@@ -125,7 +125,7 @@
       }
     }
 
-    .avatar_img {
+    .avatar__img {
       display: block;
       width: 140px;
       height: auto;
@@ -145,37 +145,36 @@
     text-align: center;
   }
 
-  .review_title {
+  .review__title--coment {
     font-family: "F37GingerRegular";
     font-size: 24px;
     line-height: 30px;
     letter-spacing: normal;
     padding-bottom: 15px;
-    @media (max-width: 649px) {
-
-    }
   }
 
-  .review_content {
+  .review__content {
     font-size: 16px;
     line-height: 25.28px;
   }
 
-  .review_author {
+  .review__author {
     color: #363636;
     font-family: "F37GingerRegular";
     font-size: 22px;
     line-height: 27.5px;
+
     @media (max-width: 649px) {
       font-size: 20px;
       line-height: 25px;
     }
   }
-  .product_arrow {
+
+  .product__arrow {
     transition: all .3s linear;
   }
 
-  .review_product {
+  .review__product {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -183,27 +182,25 @@
     align-items: center;
     flex-direction: row;
     padding: 0px 20px;
-
     width: 100%;
     height: 100px;
-
     border-radius: 0px 0px 15px 15px;
     background: #00AFA9;
 
     &:hover{
-      .product_arrow {
+      .product__arrow {
         transform: scale(1.3);
       }
     }
   }
 
-  .review_product_wrapper {
+  .review__product__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 
-    .review_product_title {
+    .review_product__title {
       width: 129px;
       font-size: 16px;
       text-align: left;
@@ -220,17 +217,16 @@
       opacity: 1;
       background: transparent;
     }
-    
 
     .arrow_icon {
       transform: scale(2);
     }
 
-    .splide__arrow--prev-custom {
+    .splide__arrow--prev--custom {
       left: -1em;
     }
 
-    .splide__arrow--next-custom {
+    .splide__arrow--next--custom {
       right: -1em;
     }
 
@@ -252,6 +248,7 @@
       height: 12px;
       width: 12px;
       border: 1px solid var(--color-base_text_color);
+
       &.is-active{
         transform: none;
         border: var(--color-main_btn);
@@ -267,7 +264,7 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
-    
+
     .slide {
       height: 670px;
       max-width: 380px;
