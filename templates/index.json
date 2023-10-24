@@ -1,5 +1,54 @@
 {
   "sections": {
+    "6bb745e3-6ed2-4128-87e6-857a8374ca4d": {
+      "type": "products_slider",
+      "blocks": {
+        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-1": {
+          "type": "product",
+          "settings": {
+            "product_picker": "immunity",
+            "product_bg_color": "#fff9c0"
+          }
+        },
+        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-2": {
+          "type": "product",
+          "settings": {
+            "product_picker": "copy-of-immunity",
+            "product_bg_color": "#fff9c0"
+          }
+        },
+        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-3": {
+          "type": "product",
+          "settings": {
+            "product_picker": "copy-of-cloud-nine",
+            "product_bg_color": "#fff9c0"
+          }
+        },
+        "071258d1-243f-4329-aa76-ad7be1181231": {
+          "type": "product",
+          "settings": {
+            "product_picker": "",
+            "product_bg_color": "#fff9c0"
+          }
+        }
+      },
+      "block_order": [
+        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-1",
+        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-2",
+        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-3",
+        "071258d1-243f-4329-aa76-ad7be1181231"
+      ],
+      "settings": {
+        "title": "Have you had your daily dose of vit today?",
+        "title_color": "#e95050",
+        "section_content": "Whether you need a daily pick-me up or a little sleep support, our products are developed with the end goal in mind. Optimally-dosed, highly bioavailable formulas means you can see and feel results that set you on a path to better health.",
+        "content_color": "#d23737",
+        "btn_text": "See all products",
+        "btn_url": "shopify:\/\/collections",
+        "btn_text_color": "#fff",
+        "btn_color": "#e95050"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -209,52 +258,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "6bb745e3-6ed2-4128-87e6-857a8374ca4d": {
-      "type": "products_slider",
-      "blocks": {
-        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-1": {
-          "type": "product",
-          "settings": {
-            "product_picker": "immunity"
-          }
-        },
-        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-2": {
-          "type": "product",
-          "settings": {
-            "product_picker": "copy-of-immunity"
-          }
-        },
-        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-3": {
-          "type": "product",
-          "settings": {
-            "product_picker": "copy-of-cloud-nine"
-          }
-        },
-        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-4": {
-          "type": "product",
-          "settings": {
-            "product_picker": "copy-of-immunity-1"
-          }
-        }
-      },
-      "block_order": [
-        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-1",
-        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-2",
-        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-3",
-        "template--15849023537252__6bb745e3-6ed2-4128-87e6-857a8374ca4d-product-4"
-      ],
-      "settings": {
-        "title": "Have you had your daily dose of vit today?",
-        "title_color": "#fff",
-        "section_content": "Whether you need a daily pick-me up or a little sleep support, our products are developed with the end goal in mind. Optimally-dosed, highly bioavailable formulas means you can see and feel results that set you on a path to better health.",
-        "content_color": "#fff",
-        "btn_text": "See all products",
-        "btn_url": "shopify:\/\/collections",
-        "btn_text_color": "#000",
-        "btn_color": "#fff",
-        "discount_bg_color": ""
       }
     }
   },

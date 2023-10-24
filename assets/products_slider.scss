@@ -5,13 +5,11 @@
   --color-base_text_color: #363636;
   --color-main_btn: #00AFA9;
   --color-main_btn_text: #fff;
-
-  --color-image_wrapper: #FFF9C0;
-  --color-tag_item_inner : #E4D9A2;
-
+  --color-image__wrapper: #FFF9C0;
+  --color-tag__item__inner : #E4D9A2;
   --max-width: 1258px;
 }
-*, a { 
+* { 
   font-family: "F37GingerLight";
   font-size: 1em;
   font-weight: 400;
@@ -23,76 +21,200 @@
 }
 
 
-.section_padding_1 {
-  padding: 71px 0px;
-
-}
-
-.container {
-  line-height: 25.28px;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  text-align: center;
-
-  @media (max-width: 1257px) {
-    padding: 0px 20px;
+  .section-padding--large {
+    padding: 71px 0px;
   }
 
-  @media (max-width: 650) {
-    max-width: 335px;
+  .container {
+    line-height: 25.28px;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+
+    @media (max-width: 1257px) {
+      padding: 0px 20px;
+    }
+
+    @media (max-width: 650) {
+      max-width: 335px;
+    }
+  }
+
+.products-slider {
+  .section__content {
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  .section__title {
+    font-family: "F37GingerBold";
+    font-size: 2.5em;
+    color: var(--color-title_color);
+    max-width: 612px;
+    line-height: 52px;
+    letter-spacing: normal;
+  }
+
+  .content__text {
+    max-width: 736px;
+    padding-top: 30px;
+    letter-spacing: normal;
+
+    .content__text__inner {
+      color: var(--color-content_text_color);
+    }
+  }
+
+  .product-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &:hover {
+      .image__wrapper {
+        background: var(--color-image__wrapper);
+      }
+
+      .tag__item__inner {
+        border-radius: 4px;
+        border: 1px solid var(--color-tag__item__inner);
+      }
+
+      .price__per__day {
+        display: block;
+      }
+    }
+  }
+
+  .image__wrapper {
+    position: relative;
+    width: 310px;
+    height: 310px;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s linear;
+  }
+
+  .image__wrapper__inner {
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .price__per__day {
+    display: none;
+    position: absolute;
+    text-align: right;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+
+    .price__per__day--price {
+      font-size: 28px;
+      line-height: 36.96px;
+    }
+
+    .price__per__day--day {
+      font-size: 18px;
+    }
+  }
+
+  .tags__list {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 15px;
+  }
+
+  .tag__item {
+    padding-right: 15px;
+
+    &:last-child {
+      padding-right: 0px;
+    }
+
+    .tag__item__inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 4px;
+      border: 1px solid #D7D2CC;
+
+      .tag__icon {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .tag__text {
+      padding-left: 10px;
+      line-height: normal;
+    }
+  }
+
+  .product-item--title {
+    font-family: "F37GingerBold";
+    font-size: 1.125em;
+    line-height: 23.76px;
+    padding-top: 10px;
+  }
+
+  .product-item--price {
+    padding-top: 10px;
+    line-height: 21.12px;
+  }
+
+  .main-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+
+    .main-btn__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 270px;
+      height: 56px;
+      flex-shrink: 0;
+      color: var(--color-main_btn_text);
+      border-radius: 10px;
+      background: var(--color-main_btn); 
+      color: color: #FFF;
+    }
   }
 }
 
-.section_content {
-  flex-direction: column;
-  display: flex;
-  position: relative;
-  align-items: center;
-}
+@media (min-width: 650px) {
+  .splide.is-initialized:not(.is-active) .splide__list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-.section_title {
-  font-family: "F37GingerBolt";
-  font-size: 2.5em;
-  color: var(--color-title_color);
-  max-width: 612px;
-  line-height: 52px;
-  letter-spacing: normal;
-}
-
-.content_text {
-  max-width: 736px;
-  padding-top: 30px;
-  letter-spacing: normal;
-
-  .content_text_inner {
-    color: var(--color-content_text_color);
+  .slide {
+    width: 100%;
+    max-width: 310px;
+    display: flex;
+    justify-content: center;
   }
 }
+
 
 .products-slider {
   .slideshow-gallery {
     padding-top: 80px;
     display: block;
-  
+
     @media (max-width: 650px) {
       padding-top: 0px;
-    }
-  }
-
-  @media (min-width: 650px) {
-    .splide.is-initialized:not(.is-active) .splide__list {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    
-    .slide {
-      width: 100%;
-      max-width: 310px;
-      display: flex;
-      justify-content: center;
     }
   }
 
@@ -104,16 +226,15 @@
     display: none;
   }
 
-  .splide__pagination-custom {
+  .splide__pagination--custom {
     position: absolute;
     display: flex;
     gap: 20px;
     z-index: 1;
     bottom: -35px;
-  
   }
 
-  .splide__pagination__page-custom {
+  .splide__pagination__page--custom {
     background: transparent;
     height: 12px;
     width: 12px;
@@ -126,122 +247,3 @@
   }
 }
 
-.product-item {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  &:hover {
-    .image_wrapper{
-      background: var(--color-image_wrapper);
-    }
-    .tag_item_inner {
-      border-radius: 4px;
-      border: 1px solid var(--color-tag_item_inner);
-    }
-    .price_per_day{
-      display: block;
-    }
-  }
-}
-
-.image_wrapper {
-  position: relative;
-  width: 310px;
-  height: 310px;
-  margin: 0 auto;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all .3s linear;
-}
-
-.image_wrapper_inner {
-  position: absolute;
-  bottom: 30px;
-}
-
-.price_per_day {
-  display: none;
-  position: absolute;
-  text-align: right;
-  right: 20px;
-  top: 20px;
-  z-index: 1;
-
-  .price_per_day-price{
-    font-size: 28px;
-    line-height: 36.96px;
-  }
-
-  .price_per_day-day{
-    font-size: 18px;
-  }
-}
-.tags_list {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 15px;
-}
-
-.tag_item {
-  padding-right: 15px;
-
-  &:last-child {
-    padding-right: 0px;
-  }
-
-  .tag_item_inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 10px;
-    border-radius: 4px;
-    border: 1px solid #D7D2CC;
-
-    .tag_icon {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .tag_text{
-    padding-left: 10px;
-    line-height: normal;
-  }
-}
-
-.product-item_title {
-  font-family: "F37GingerBolt";
-  font-size: 1.125em;
-  line-height: 23.76px;
-  padding-top: 10px;
-}
-
-.product-item_price{
-  padding-top: 10px;
-  line-height: 21.12px;
-}
-
-.section_main_btn{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 80px;
-
-  .section_main_btn_inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 270px;
-    height: 56px;
-    flex-shrink: 0;
-
-    color: var(--color-main_btn_text);
-    border-radius: 10px;
-    background: var(--color-main_btn); 
-    color: color: #FFF;
-  }
-}

@@ -5,16 +5,16 @@
 {{ 'normalase.css' | asset_url | stylesheet_tag }}
 {{ 'products_slider.scss' | asset_url | stylesheet_tag }}
 
-<section id="shopify-{{ section.id }}" class="section section_padding_1 products-slider">
+<section id="shopify-{{ section.id }}" class="section section-padding--large products-slider">
   <div class="container">
     {% if section.settings.title != blank or section.settings.section_content != blank %}
-      <div class="section_content">
+      <div class="section__content">
         {% if section.settings.title != blank %}
-          <h1 class="section_title">{{ section.settings.title }}</h1>
+          <h1 class="section__title">{{ section.settings.title }}</h1>
         {% endif %}
         {% if section.settings.section_content != blank %}
-          <div class="content_text">
-            <p class="content_text_inner">{{ section.settings.section_content }}</p>
+          <div class="content__text">
+            <p class="content__text__inner">{{ section.settings.section_content }}</p>
           </div>
         {% endif %}
       </div>
@@ -23,20 +23,22 @@
       <div class="splide slideshow-gallery">
         <div class="splide__track">
           <div class="splide__list">
-            {% for block in section.blocks %}
-              {% if block.settings.product_picker != blank %}
-                <div {{ block.shopify_attributes }} class="splide__slide slide">
+            {% for block in section.blocks limit: 4 %}
+              <div {{ block.shopify_attributes }} class="splide__slide slide">
+                {% if block.settings.product_picker != blank %}
                   {% render 'product-card', product: block.settings.product_picker, blockId: block.id %}
-                </div>
-              {% endif %}
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+              </div>
             {% endfor %}
           </div>
         </div>
       </div>
     {% endif %}
     {% if section.settings.btn_url != blank and section.settings.btn_text != blank %}
-      <div class="section_main_btn">
-        <a class="section_main_btn_inner" href="{{ section.settings.btn_url }}"> {{ section.settings.btn_text }} </a>
+      <div class="main-btn">
+        <a class="main-btn__inner" href="{{ section.settings.btn_url }}"> {{ section.settings.btn_text }} </a>
       </div>
     {% endif %}
   </div>
@@ -46,33 +48,33 @@
 
 {% style %}
   {% if section.settings.title_color != blank and section.settings.title_color.alpha != 0 %}
-    #shopify-{{ section.id }} .section_title {
+    #shopify-{{ section.id }} .section__title {
       --color-title_color: {{ section.settings.title_color }};
     }
   {% endif %}
 
   {% if section.settings.content_color != blank and section.settings.content_color.alpha != 0 %}
-    #shopify-{{ section.id }} .content_text {
+    #shopify-{{ section.id }} .content__text {
       --color-content_text_color: {{ section.settings.content_color }};
     }
   {% endif %}
 
   {% if section.settings.btn_text_color != blank and section.settings.btn_text_color.alpha != 0 %}
-    #shopify-{{ section.id }} .section_main_btn_inner {
+    #shopify-{{ section.id }} .main-btn__inner {
       --color-main_btn_text: {{ section.settings.btn_text_color }};
     }
   {% endif %}
 
   {% if section.settings.btn_color != blank and section.settings.btn_color.alpha != 0 %}
-    #shopify-{{ section.id }} .section_main_btn_inner, .splide__pagination__page-custom.is-active {
+    #shopify-{{ section.id }} .main-btn__inner, .splide__pagination__page--custom.is-active {
       --color-main_btn: {{ section.settings.btn_color }};
     }
   {% endif %}
 
   {% for block in section.blocks %}
     {% if block.settings.product_bg_color != blank and block.settings.product_bg_color.alpha != 0 %}
-      #shopify-{{ block.id }} .image_wrapper {
-        --color-image_wrapper: {{ block.settings.product_bg_color }};
+      #shopify-{{ block.id }} .image__wrapper {
+        --color-image__wrapper: {{ block.settings.product_bg_color }};
       }
     {% endif %}
   {% endfor %}
@@ -91,8 +93,7 @@
     {
       "type": "color",
       "id": "title_color",
-      "label": "Title color",
-      "default": "#784444"
+      "label": "Title color"
     },
     {
       "type": "text",
@@ -103,8 +104,7 @@
     {
       "type": "color",
       "id": "content_color",
-      "label": "Content color",
-      "default": "#784444"
+      "label": "Content color"
     },
     {
       "type": "text",
@@ -121,14 +121,12 @@
     {
       "type": "color",
       "id": "btn_text_color",
-      "label": "Button text color",
-      "default": "#fff"
+      "label": "Button text color"
     },
     {
       "type": "color",
       "id": "btn_color",
-      "label": "Button color",
-      "default": "#00AFA9"
+      "label": "Button color"
     }
   ],
   "blocks": [

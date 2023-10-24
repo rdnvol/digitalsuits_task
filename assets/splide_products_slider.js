@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var splide = new Splide('.products-slider .splide', {
+  const splide = new Splide('.products-slider .splide', {
     mediaQuery: 'min',
     breakpoints: {
       650: {
@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     },
     classes: {
-      pagination: 'splide__pagination splide__pagination-custom ',
-      page: 'splide__pagination__page splide__pagination__page-custom',
+      pagination: 'splide__pagination splide__pagination--custom ',
+      page: 'splide__pagination__page splide__pagination__page--custom',
     },
   });
   splide.mount();
